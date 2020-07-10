@@ -27,4 +27,4 @@ class Example extends Component {
 
 ## License
 
-GPL © [krishna-gujjjar](https://github.com/krishna-gujjjar)
+GPL © [Krishna Gujjjar](https://github.com/krishna-gujjjar)

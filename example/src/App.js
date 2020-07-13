@@ -1,10 +1,14 @@
 import React from 'react'
 
-import { ExampleComponent } from 'reactsax'
+import { RxButton } from 'reactsax'
 import 'reactsax/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <RxButton active success>
+      Hello
+    </RxButton>
+  )
 }
 
 export default App

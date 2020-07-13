@@ -1,0 +1,9 @@
+// Return Css Color Variable
+@function getColor($colorName, $alpha: 1) {
+    @return unquote("rgba(var(--rx-#{$colorName}), #{$alpha})");
+}
+
+// Return Css Variable
+@function getVar($var) {
+    @return unquote("var(--rx-#{$var})");
+}

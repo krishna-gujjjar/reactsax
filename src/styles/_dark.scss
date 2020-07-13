@@ -1,0 +1,70 @@
+[rx-theme="dark"] {
+    --rx-background: 30, 32, 35;
+    --rx-text: 255, 255, 255;
+    --rx-gray-1: 24, 25, 28;
+    --rx-gray-2: 20, 20, 23;
+    --rx-gray-3: 15, 16, 19;
+    --rx-gray-4: 10, 11, 14;
+    --rx-shadow-opacity: .3;
+    --rx-dark: 0, 0, 0;
+    --rx-background-opacity: .6;
+
+    .rx-pagination-content {
+        &.rx-component-dark {
+            .rx-pagination__active {
+                --rx-color: 255, 255, 255;
+                color: getColor("gray-3");
+            }
+        }
+    }
+
+    .rx-button {
+        &.rx-component-dark {
+            &.rx-button--transparent {
+                color: getColor("text") !important;
+
+                &:hover {
+                    &:before {
+                        background: getColor("color", 0.2);
+                    }
+                }
+            }
+
+            &.rx-button--active {
+                &:before {
+                    background: getColor("color", getVar("background-opacity"));
+                }
+            }
+        }
+    }
+
+    .rx-ripple, .rx-ripple-invert, .rx-ripple-content {
+        --rx-color: 0,0,0;
+    }
+
+    .rx-loading {
+        --rx-background: 0, 0, 0;
+    }
+
+    .rx-input-parent--state-dark {
+        --rx-dark: 255, 255, 255 !important;
+    }
+
+    .rx-input {
+        background: #000 !important;
+    }
+
+    .rx-component-dark {
+        --rx-color: 0, 0, 0 !important;
+    }
+
+    .rx-avatar {
+        color: #fff !important;
+    }
+
+    &.rx-alert {
+        --rx-color: 0, 0, 0 !important;
+        background: getColor("color", 1) !important;
+        color: getColor("text", 1) !important;
+    }
+}

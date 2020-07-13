@@ -1,0 +1,89 @@
+@import "./functions";
+
+:root {
+    /* Default Colors */
+    --rx-primary: 25, 91, 255;
+    --rx-warn: 255, 186, 0;
+    --rx-danger: 255,71,87;
+    --rx-success: 70,201,58;
+    --rx-dark: 30,30,30;
+    --rx-light: 244,247,248;
+    --rx-color: 17,18,20;
+    --rx-transparent: 0,0,0;
+
+    /* Social Colors */
+    --rx-facebook: 59, 89, 153;
+    --rx-twitter: 29, 161, 242;
+    --rx-youtube: 255, 0, 0;
+    --rx-pinterest: 189, 8, 28;
+    --rx-linkedin: 0, 119, 181;
+    --rx-snapchat: 255, 252, 0;
+    --rx-whatsapp: 37, 211, 102;
+    --rx-tumblr: 54, 70, 93;
+    --rx-reddit: 255, 69, 0;
+    --rx-spotify: 30, 215, 96;
+    --rx-amazon: 255, 153, 0;
+    --rx-medium: 2, 184, 117;
+    --rx-vimeo: 26, 183, 234;
+    --rx-skype: 0, 175, 240;
+    --rx-dribbble: 234, 76, 137;
+    --rx-slack: 74, 21, 75;
+    --rx-yahoo: 67, 2, 151;
+    --rx-twitch: 100, 65, 164;
+    --rx-discord: 114, 137, 218;
+    --rx-telegram: 0, 136, 204;
+    --rx-google-plus: 219, 68, 55;
+    --rx-messenger: 0, 132, 255;
+
+    /* Theme Colors */
+    --rx-background: 255, 255, 255;
+    --rx-text: 44, 62, 80;
+    --rx-gray-1: 249, 252, 253;
+    --rx-gray-2: 244, 247, 248;
+    --rx-gray-3: 240, 243, 244;
+    --rx-gray-4: 230, 233, 234;
+
+    /* Utils */
+    --rx-shadow-opacity: .05;
+    --rx-radius: 20px;
+    --rx-zindex-1: 100000;
+    --rx-zindex-2: 99000;
+    --rx-zindex-3: 98000;
+    --rx-zindex-4: 97000;
+    --rx-background-opacity: .2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+[disabled] {
+    opacity: .6;
+}
+
+input, textarea, button, select, a {
+    -webkit-tap-highlight-color: getColor("transparent", 0);
+}
+
+[class*="rx-"] {
+    border: 0px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.rx-remove-transition {
+    *, *:after, *:before {
+        transition: all 0s !important;
+    }
+}
+
+@import "dark";
+
+// @import "../util/ripple/style";

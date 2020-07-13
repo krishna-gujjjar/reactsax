@@ -1,0 +1,64 @@
+@import "./../../styles/functions";
+@import "./../../styles/reactsax";
+
+.rx-ripple-content {
+    --rx-color: var(--rx-background);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    border-radius: inherit;
+    z-index: -1;
+
+    .rx-ripple {
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        opacity: 0;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transition: all .5s ease;
+        background: radial-gradient(circle, getColor(color, 0.05), getColor(color, 0.6));
+
+        &--solid {
+            background: getColor(color, 1);
+            opacity: 1;
+        }
+    }
+
+    .rx-ripple-invert {
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        opacity: 0;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transition: all .5s ease;
+        background-image: radial-gradient(circle, getColor(color, 0.5), getColor(color, 0));
+    }
+
+    .rx-ripple-cut-1 {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        position: absolute;
+        transform: translate(-100%, -50%) skew(20deg);
+        transition: all .6s ease;
+        background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .rx-ripple-cut-2 {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        position: absolute;
+        transform: translate(0%, -50%) skew(20deg);
+        transition: all .6s ease;
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+}

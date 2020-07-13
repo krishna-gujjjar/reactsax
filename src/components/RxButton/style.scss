@@ -1,0 +1,556 @@
+@import "./root";
+@import "./../../styles/functions";
+
+.rx-button {
+    border: 0px;
+    margin: getVar(button-margin);
+    border-radius: getVar(button-border-radius);
+    transition: all .25s ease;
+    position: relative;
+    user-select: none;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    outline: none;
+    font-size: .8rem;
+    box-sizing: border-box;
+
+    &.rx-component-dark {
+        &.rx-button--transparent {
+            color: getColor("text") !important;
+        }
+    }
+
+    &--fff {
+        &:focus {
+            color: rgba(30, 30, 30, 1) !important;
+        }
+    }
+
+    &__content {
+        padding: getVar(button-padding);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--active-disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.35;
+    }
+
+    &.rx-button--animate:not(.rx-button--animate-inactive) {
+        .rx-button__content {
+            i {
+                font-size: 1.15rem;
+            }
+        }
+
+        &:hover {
+            .rx-button__content {
+                transform: translate(-100%);
+            }
+
+            .rx-button__animate {
+                transform: translate(0%);
+            }
+        }
+
+        &.rx-button--animate-vertical {
+            &:hover {
+                .rx-button__content {
+                    transform: translate(0, -100%) !important;
+                    opacity: 0;
+                }
+
+                .rx-button__animate {
+                    transform: translate(0%) !important;
+                }
+            }
+        }
+
+        &.rx-button--animate-scale {
+            &:hover {
+                .rx-button__content {
+                    transform: scale(1.4) !important;
+                    opacity: 0;
+                }
+
+                .rx-button__animate {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+
+        &.rx-button--animate-rotate {
+            &:hover {
+                .rx-button__content {
+                    transform: rotate(180deg) !important;
+                    opacity: 0;
+                }
+
+                .rx-button__animate {
+                    opacity: 1;
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        .rx-button__content {
+            transition: transform 0.25s ease;
+        }
+    }
+
+    &__animate {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        left: 0px;
+        transition: transform .25s ease;
+        transform: translate(100%);
+        pointer-events: none;
+
+        &--vertical {
+            transform: translate(0, 100%);
+        }
+
+        &--scale {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        &--rotate {
+            transform: rotate(-180deg);
+            opacity: 0;
+        }
+    }
+
+    &--block {
+        width: 100%;
+        display: block;
+    }
+
+    &--upload {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: getColor("color", 0.4);
+            top: 0px;
+            left: 0px;
+            z-index: 1200;
+            animation: btnupload .7s ease infinite;
+            box-sizing: border-box;
+        }
+    }
+
+    &--loading {
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .rx-button__loading {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: getColor("color", 0.8);
+        border-radius: inherit;
+
+        &:after {
+            content: '';
+            width: 17px;
+            height: 17px;
+            border: 2px dotted rgba(255, 255, 255, 0.6);
+            border-top: 2px solid rgba(255, 255, 255, 0);
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+            border-right: 2px solid rgba(255, 255, 255, 0);
+            border-radius: 50%;
+            position: absolute;
+            animation: btnload .6s linear infinite;
+            box-sizing: border-box;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 17px;
+            height: 17px;
+            border: 2px solid rgb(255, 255, 255);
+            border-top: 2px solid rgba(255, 255, 255, 0);
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+            border-right: 2px solid rgba(255, 255, 255, 0);
+            border-radius: 50%;
+            animation: btnload .6s ease infinite;
+            box-sizing: border-box;
+        }
+    }
+
+    // SIZE -----
+    &--size-xl {
+        border-radius: 20px;
+
+        .rx-button__content {
+            padding: 15px 20px;
+            font-size: 1.1rem;
+        }
+    }
+
+    &--size-large {
+        font-size: 1rem;
+        border-radius: 15px;
+
+        .rx-button__content {
+            padding: 10px 15px;
+        }
+    }
+
+    &--size-small {
+        font-size: .75rem;
+        border-radius: 9px;
+
+        .rx-button__content {
+            padding: 5px 10px;
+        }
+    }
+
+    &--size-mini {
+        font-size: .6rem;
+        border-radius: 7px;
+
+        .rx-button__content {
+            padding: 3px 8px;
+        }
+    }
+
+    // SIZE - CLOSE -----
+
+    &--circle {
+        border-radius: 25px;
+    }
+
+    &--square {
+        border-radius: 0px;
+    }
+
+    &--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rx-button__content {
+            padding: 8px 8px;
+        }
+
+        i {
+            font-size: 1.15rem;
+        }
+    }
+}
+
+// Type Button Style
+.rx-button--default {
+    background: getColor(color, 1);
+    color: #fff;
+
+    &.rx-button--active {
+        box-shadow: 0px 10px 20px -10px getColor(color, 1);
+        transform: translate(0, -3px);
+    }
+
+    &:hover {
+        box-shadow: 0px 10px 20px -10px getColor(color, 1);
+        transform: translate(0, -3px);
+    }
+}
+
+.rx-button--flat {
+    background: getColor(color, 0.15);
+    color: getColor(color, 1);
+
+    &.rx-button--dark {
+        color: getColor(text, 1);
+    }
+
+    &:hover {
+        background: getColor(color, 0.25);
+    }
+
+    &:focus {
+        color: #fff;
+        background: getColor(color, 1);
+        transition: all .25s ease, background .25s ease .25s;
+    }
+
+    &.rx-button--active {
+        background: getColor(color, 1);
+        color: #fff;
+    }
+}
+
+.rx-button--floating {
+    background: getColor(color, 1);
+    color: #fff;
+    box-shadow: 0px 8px 20px -6px getColor(color, 1);
+    transform: translate(0, -3px);
+
+    &:hover {
+        box-shadow: 0px 8px 20px -6px getColor(color, 1);
+        transform: translate(0, -6px);
+    }
+
+    &:focus {
+        transform: translate(0, 0px);
+        box-shadow: 0px 0px 0px 0px getColor(color, 1);
+    }
+
+    &.rx-button--active {
+        transform: translate(0, 0px);
+        box-shadow: 0px 0px 0px 0px getColor(color, 1);
+    }
+}
+
+.rx-button--border {
+    background: getColor(color, 0);
+    color: getColor(color, 1);
+
+    &:before {
+        content: '';
+        border: 2px solidgetColor(color, 1);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: transparent;
+        pointer-events: none;
+        transition: all .25s ease;
+        box-sizing: border-box;
+    }
+
+    &:hover {
+        &:before {
+            border: 2px solidgetColor(color, 0.5);
+        }
+    }
+
+    &:focus {
+        color: #fff;
+        background: getColor(color, 1);
+    }
+
+    &.rx-button--active {
+        background: getColor(color, 1);
+        color: #fff;
+    }
+}
+
+.rx-button--gradient {
+    background: getColor("color");
+    color: #fff;
+    overflow: hidden;
+
+    &.rx-button--primary, &.rx-button--success {
+        &::before {
+            filter: hue-rotate(40deg);
+        }
+    }
+
+    &::before {
+        content: '';
+        background: linear-gradient(30deg, getColor("color", 0) 33%, getColor("color", 1) 100%);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        pointer-events: none;
+        transition: all .4s ease;
+        z-index: -1;
+        filter: hue-rotate(-40deg);
+        box-sizing: border-box;
+    }
+
+    &:hover {
+        transform: translate(0, -3px);
+        box-shadow: 0px 10px 20px -10px getColor("color", 0.7);
+
+        &::before {
+            opacity: 0;
+
+            // transform: translate(50%, -50%)
+
+        }
+    }
+
+    &.rx-button--active {
+        transform: translate(0, -3px);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.rx-button--relief {
+    background: getColor("color");
+    color: #fff;
+    overflow: hidden;
+    transform: translate(0) scale(1, 1);
+
+    .rx-button__content {
+        transition: all .25s ease;
+    }
+
+    &.rx-button--icon {
+        &.rx-button--active {
+            height: auto;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: calc(100% - 3px);
+        border-radius: inherit;
+        pointer-events: none;
+        transition: all .4s ease;
+        z-index: -1;
+        filter: contrast(2) grayscale(0.4);
+        border-bottom: 3px solidgetColor("color");
+        box-sizing: border-box;
+    }
+
+    &:active {
+        transform: translate(0, 1px);
+
+        .rx-button__content {
+            padding-bottom: 6px;
+        }
+
+        &::before {
+            border-bottom: 0px solidgetColor("color");
+        }
+    }
+
+    &.rx-button--active {
+        transform: translate(0, 1px);
+
+        .rx-button__content {
+            padding-bottom: 6px;
+        }
+
+        &::before {
+            border-bottom: 0px solidgetColor("color");
+        }
+    }
+}
+
+.rx-button--transparent {
+    background: transparent;
+    color: getColor("color");
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background: getColor("color", 0.1);
+
+        // background:getColor('color',getVar('background-opacity'));
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        pointer-events: none;
+        transition: all .25s ease;
+        z-index: -1;
+        transform: scale(0.5);
+        opacity: 0;
+        box-sizing: border-box;
+    }
+
+    &:active:not(.rx-button--active) {
+        &::before {
+            transform: scale(0.9) !important;
+        }
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &.rx-button--active {
+        &::before {
+            background: getColor("color", 0.2);
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.rx-button--shadow {
+    background: getColor("background");
+    color: getColor("text");
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, getVar(shadow-opacity));
+
+    &:active:not(.rx-button--active) {
+        transform: translate(0, -1px);
+        box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, getVar(shadow-opacity)) !important;
+    }
+
+    &:hover {
+        transform: translate(0, -3px);
+        box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, getVar(shadow-opacity));
+    }
+
+    &.rx-button--active {
+        transform: translate(0, -3px);
+        box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, getVar(shadow-opacity));
+    }
+}
+
+@keyframes btnload {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes btnupload {
+    0% {
+        transform: translate(0, 110%);
+    }
+
+    100% {
+        transform: translate(0, -110%);
+    }
+}

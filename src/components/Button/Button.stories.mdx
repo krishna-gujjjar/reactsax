@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import Button from '.'
+
+<Meta title='Button' component={Button} />
+
+# Button
+
+Let's define a story for our `Button` component:
+
+<Story name='primary'>
+  <Button>Primary</Button>
+</Story>
+
+We can drop it in a `Preview` to get a code snippet:
+
+<Preview>
+  <Story name='danger'>
+    <Button danger>Danger</Button>
+  </Story>
+</Preview>
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Preview>
+  <Story name='warning'>
+    <Button warning>Warning</Button>
+  </Story>
+  <Story name='success'>
+    <Button success>Success</Button>
+  </Story>
+  <Story name='error'>
+    <Button status='error'>Error</Button>
+  </Story>
+  <Story name='with icon'>
+    <Button status='warning'>
+      <Icon icon='check' inline />
+      with icon
+    </Button>
+  </Story>
+</Preview>

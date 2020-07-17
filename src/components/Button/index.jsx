@@ -1,10 +1,10 @@
 import React, { useRef, useState, useLayoutEffect, useCallback } from 'react'
 import classnames from 'classnames'
-import { default as colorUtils } from './../../helpers/color'
-import ripple, { rippleCut, rippleReverse } from './../../helpers/ripple'
+import { default as colorUtils } from '../../helpers/color'
+import ripple, { rippleCut, rippleReverse } from '../../helpers/ripple'
 import './style.scss'
 
-const RxButton = (props) => {
+export default (props) => {
   const {
     animateInactive,
     animationType = '',
@@ -135,5 +135,3 @@ const RxButton = (props) => {
     </button>
   )
 }
-
-export default RxButton

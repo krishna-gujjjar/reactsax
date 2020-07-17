@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { RxButton } from 'reactsax'
+import { Button } from 'reactsax'
 import 'reactsax/dist/index.css'
 
 const App = () => {
   return (
-    <RxButton active success>
+    <Button active success>
       Hello
-    </RxButton>
+    </Button>
   )
 }
 

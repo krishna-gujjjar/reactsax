@@ -9,9 +9,7 @@ const ripple = (evt, color = '', solid = false) => {
 
   let time = 0.6
 
-  if (el.clientWidth > 150) {
-    time = 1.2
-  }
+  if (el.clientWidth > 150) time = 1.2
 
   const effectContent = document.createElement('div')
 
@@ -82,7 +80,6 @@ export const rippleReverse = (evt) => {
   const effect = document.createElement('div')
 
   effect.className = 'rx-ripple-invert'
-  // effect.style.transition = `all ${time}s ease`
 
   effect.style.left = `${x}px`
   effect.style.top = `${y}px`
@@ -146,7 +143,6 @@ export const rippleCut = (evt) => {
 
   effect.className = 'rx-ripple-cut-1'
   effect2.className = 'rx-ripple-cut-2'
-  // effect.style.transition = `all ${time}s ease`
 
   effect.style.left = effect2.style.left = `${x}px`
   effect.style.top = effect2.style.top = `${y}px`

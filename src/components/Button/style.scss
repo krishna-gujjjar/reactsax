@@ -24,10 +24,8 @@
         }
     }
 
-    &--fff {
-        &:focus {
-            color: rgba(30, 30, 30, 1) !important;
-        }
+    &--light {
+        color: #1e1e1e !important;
     }
 
     &__content {

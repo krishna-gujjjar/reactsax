@@ -15,12 +15,12 @@ npm install --save reactsax
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'reactsax'
+import { Button } from 'reactsax'
 import 'reactsax/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Button>example</Button>
   }
 }
 ```

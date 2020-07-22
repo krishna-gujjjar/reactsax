@@ -8,7 +8,7 @@ export const isColor = (color) => {
     'dark',
     'light',
     'warn',
-    // social colors
+
     'facebook',
     'twitter',
     'youtube',
@@ -56,7 +56,6 @@ export const setColor = (colorName, color, el, addClass) => {
     return result
       ? {
           r: parseInt(result[1], 16),
-          // tslint:disable-next-line:object-literal-sort-keys
           g: parseInt(result[2], 16),
           b: parseInt(result[3], 16)
         }
@@ -100,28 +99,16 @@ export const setColor = (colorName, color, el, addClass) => {
     if (addClass) {
       el.classList.add('rx-change-color')
     }
-  } else {
-    //     consolee.warn({
-    //       el,
-    //       link: 'https://lusaxweb.github.io/vuesax/',
-    //       text: `• Component: ${el.__vue__.$vnode.componentOptions.tag}
-    // • Warn info: El formato de la propiedad color es incorrecto
-    // • Prop: color
-    // • value: ${color}
-    // • Valores Permitidos: (RGB, HEX, RGB Numbers, Vuesax Colors)
-    // • Example: color="#000" or color="rgb(255,255,255)"`,
-    //       title: 'VUESAX'
-    //     })
   }
 }
 
 export const insertBody = (element, parent) => {
-  const target = parent ? parent : document.body
+  const target = parent || document.body
   target.insertBefore(element, target.lastChild)
 }
 
 export const removeBody = (element, parent) => {
-  const target = parent ? parent : document.body
+  const target = parent || document.body
   target.removeChild(element)
 }
 

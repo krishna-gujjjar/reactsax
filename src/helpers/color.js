@@ -1,29 +1,25 @@
 import { setColor } from './utils'
-export default (
-  selector,
-  primary = false,
-  success = false,
-  warn = false,
-  secondary = false,
-  danger = false,
-  dark = false,
-  white = false,
-  color = ''
-) => {
+export default function colorUtils(selector, props) {
   if (!selector || selector.nodeName === '#comment') return
 
-  let componentColor =
-    (danger && 'danger') ||
-    (success && 'success') ||
-    (warn && 'warn') ||
-    (secondary && 'secondary') ||
-    (dark && 'dark') ||
-    (white && 'white') ||
-    (primary && 'primary')
-  console.log(color)
+  const {
+    primary = false,
+    success = false,
+    warning = false,
+    danger = false,
+    dark = false,
+    white = false,
+    light = false,
+    color = ''
+  } = props
 
-  console.log(componentColor)
-  console.log(componentColor || color || 'primary')
+  const componentColor =
+    ((danger || color === 'danger') && 'danger') ||
+    ((success || color === 'success') && 'success') ||
+    ((warning || color === 'warning') && 'warn') ||
+    ((dark || color === 'dark') && 'dark') ||
+    ((white || light || color === 'light' || color === 'white') && 'light') ||
+    ((primary || color === 'primary') && 'primary')
 
   if (color || componentColor) {
     setColor('color', componentColor || color || 'primary', selector, true)
@@ -46,17 +42,12 @@ export default (
     //   )
     // }
   }
-  if (componentColor === 'dark' || color === 'dark') {
+  if (componentColor === 'dark' || color === 'dark')
     selector.classList.add('rx-component-dark')
-  } else {
-    selector.classList.remove('rx-component-dark')
-  }
+  else selector.classList.remove('rx-component-dark')
 
-  if (componentColor === 'white') {
-    selector.classList.add('rx-component-white')
-  } else {
-    selector.classList.remove('rx-component-white')
-  }
-  console.log(componentColor)
+  if (componentColor === 'white') selector.classList.add('rx-component-white')
+  else selector.classList.remove('rx-component-white')
+
   return componentColor
 }

@@ -5,9 +5,17 @@ import 'reactsax/dist/index.css'
 
 const App = () => {
   return (
-    <Button active success>
-      Hello
-    </Button>
+    <>
+      <Button success styleType={'relief'}>
+        Hello
+      </Button>
+      <Button color={'danger'} styleType={'flat'}>
+        Hello
+      </Button>
+      <Button warning relief>
+        Hello
+      </Button>
+    </>
   )
 }
 

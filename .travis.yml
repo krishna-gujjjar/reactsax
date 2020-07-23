@@ -13,7 +13,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: fbd6022dca5a39d75f3946c6c50103366d7dff8e
+  github-token: $GITHUB_TOKEN
   local_dir: docs # The folder that needs to be deployed
   repo: krishna-gujjjar/reactsax
   target_branch: gh-pages # Tell Travis to deploy on the gh-pages branch

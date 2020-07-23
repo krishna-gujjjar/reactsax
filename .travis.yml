@@ -2,3 +2,18 @@ language: node_js
 node_js:
   - 12
   - 10
+
+# Script that is run before the script phase
+before_script:
+  - npm run build-storybook
+
+# Deployment information
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: fbd6022dca5a39d75f3946c6c50103366d7dff8e
+  local_dir: docs # The folder that needs to be deployed
+  repo: krishna-gujjjar/reactsax
+  target_branch: gh-pages # Tell Travis to deploy on the gh-pages branch
+  on:
+    branch: master # Tell Travis to trigger a deploy only when we push to master

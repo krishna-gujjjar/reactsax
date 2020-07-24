@@ -1,14 +1,14 @@
 import {
-  Meta,
-  Story,
-  Preview,
-  Props,
-  DocsPage
-} from '@storybook/addon-docs/blocks'
-import { PropsTable } from '@storybook/components'
-import Button from './../../src/components/Button'
+	Meta,
+	Story,
+	Preview,
+	Props,
+	DocsPage,
+} from "@storybook/addon-docs/blocks";
+import { PropsTable } from "@storybook/components";
+import Button from "./../../src/components/Button";
 
-<Meta title='Button' component={Button} />
+<Meta title="Button" component={Button} />
 
 # Button
 
@@ -24,40 +24,40 @@ Change the color of the Button component with the `color` property and the color
 
 #### Color's Value :
 
-- `primary`
-- `success`
-- `warning`
-- `danger`
-- `light`
-- `dark`
-- `RGB color` (like `rgb(255,255,25)`)
-- `HEX color` (like `#3B3B98`)
+-   `primary`
+-   `success`
+-   `warning`
+-   `danger`
+-   `light`
+-   `dark`
+-   `RGB color` (like `rgb(255,255,25)`)
+-   `HEX color` (like `#3B3B98`)
 
 <Preview>
-  <Story name='Primary'>
-    <Button primary>Primary</Button>
-  </Story>
-  <Story name='Success'>
-    <Button success>Success</Button>
-  </Story>
-  <Story name='Warning'>
-    <Button warning>Warning</Button>
-  </Story>
-  <Story name='Danger'>
-    <Button danger>Danger</Button>
-  </Story>
-  <Story name='Dark'>
-    <Button dark>Dark</Button>
-  </Story>
-  <Story name='Light'>
-    <Button light>White</Button>
-  </Story>
-  <Story name='RGB'>
-    <Button color={'rgb(20, 255, 203)'}>RGB</Button>
-  </Story>
-  <Story name='HEX'>
-    <Button color={'#626cfc'}>HEX</Button>
-  </Story>
+	<Story name="Primary">
+		<Button primary>Primary</Button>
+	</Story>
+	<Story name="Success">
+		<Button success>Success</Button>
+	</Story>
+	<Story name="Warning">
+		<Button warning>Warning</Button>
+	</Story>
+	<Story name="Danger">
+		<Button danger>Danger</Button>
+	</Story>
+	<Story name="Dark">
+		<Button dark>Dark</Button>
+	</Story>
+	<Story name="Light">
+		<Button light>White</Button>
+	</Story>
+	<Story name="RGB">
+		<Button color={"rgb(20, 255, 203)"}>RGB</Button>
+	</Story>
+	<Story name="HEX">
+		<Button color={"#626cfc"}>HEX</Button>
+	</Story>
 </Preview>
 
 If You Get Warning:
@@ -65,11 +65,11 @@ If You Get Warning:
 You can use `color` attribute :
 
 <Preview>
-  <Story name='Color Alternative Syntax'>
-    <center>
-      <Button color={'success'}>Success</Button>
-    </center>
-  </Story>
+	<Story name="Color Alternative Syntax">
+		<center>
+			<Button color={"success"}>Success</Button>
+		</center>
+	</Story>
 </Preview>
 
 <br />
@@ -83,19 +83,19 @@ The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` t
 
 #### Values :
 
-- `active`
-- `disabled`
+-   `active`
+-   `disabled`
 
 <Preview>
-  <Story name='Active Button'>
-    <Button active>Active</Button>
-  </Story>
-  <Story name='Default Button'>
-    <Button>Default</Button>
-  </Story>
-  <Story name='Disable Button'>
-    <Button disabled>Disabled</Button>
-  </Story>
+	<Story name="Active Button">
+		<Button active>Active</Button>
+	</Story>
+	<Story name="Default Button">
+		<Button>Default</Button>
+	</Story>
+	<Story name="Disable Button">
+		<Button disabled>Disabled</Button>
+	</Story>
 </Preview>
 
 <br />
@@ -109,22 +109,53 @@ The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` t
 
 #### Values :
 
-- `flat`
+-   `flat`
 
 <Preview>
-  <Story name='Active Flat Button'>
-    <Button flat active>
-      Active
-    </Button>
-  </Story>
-  <Story name='Default Flat Button'>
-    <Button flat>Default</Button>
-  </Story>
-  <Story name='Disable Flat Button'>
-    <Button flat disabled>
-      Disabled
-    </Button>
-  </Story>
+	<Story name="Active Flat Button">
+		<Button flat active>
+			Active
+		</Button>
+	</Story>
+	<Story name="Default Flat Button">
+		<Button flat>Default</Button>
+	</Story>
+	<Story name="Disable Flat Button">
+		<Button flat disabled>
+			Disabled
+		</Button>
+	</Story>
+</Preview>
+
+<br />
+<br />
+
+## Gradient
+
+The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` to make its implementation simpler and speed up the work.
+
+<br />
+
+#### Values :
+
+-   `gradient`
+
+<Preview>
+	<Story name="Active Gradient Button">
+		<Button gradient color={"#55ef"} active>
+			Active
+		</Button>
+	</Story>
+	<Story name="Default Gradient Button">
+		<Button gradient color={"#55ef"}>
+			Default
+		</Button>
+	</Story>
+	<Story name="Disable Gradient Button">
+		<Button gradient color={"#55ef"} disabled>
+			Disabled
+		</Button>
+	</Story>
 </Preview>
 
 <br />

@@ -1,0 +1,255 @@
+{
+  "config": {
+    "title": "Reactsax",
+    "description": "Vuesax For Reacters",
+    "menu": [],
+    "version": "1.0.0-beta.1",
+    "repository": "https://github.com/krishna-gujjjar/reactsax",
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "/Volumes/MyStuffs/reactsax/README.md",
+        "link": "https://github.com/krishna-gujjjar/reactsax/edit/master/README.md",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "reactsax",
+            "depth": 1,
+            "value": "ReactSaX"
+          },
+          {
+            "slug": "install",
+            "depth": 2,
+            "value": "Install"
+          },
+          {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
+            "slug": "are-you-from-vue-",
+            "depth": 2,
+            "value": "Are You From Vue ?"
+          },
+          {
+            "slug": "authors",
+            "depth": 2,
+            "value": "Authors"
+          },
+          {
+            "slug": "license",
+            "depth": 3,
+            "value": "License"
+          }
+        ]
+      }
+    },
+    {
+      "key": "example/README.md",
+      "value": {
+        "id": "20bfc3ff6a860483887b93bf9cf0d135",
+        "filepath": "example/README.md",
+        "fullpath": "/Volumes/MyStuffs/reactsax/example/README.md",
+        "link": "https://github.com/krishna-gujjjar/reactsax/edit/master/example/README.md",
+        "hidden": false,
+        "slug": "example-readme",
+        "route": "/example-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/Button/Button.mdx",
+      "value": {
+        "name": "Button",
+        "id": "2b773349a016959194c905ce6ad9d2d4",
+        "filepath": "src/components/Button/Button.mdx",
+        "fullpath": "/Volumes/MyStuffs/reactsax/src/components/Button/Button.mdx",
+        "link": "https://github.com/krishna-gujjjar/reactsax/edit/master/src/components/Button/Button.mdx",
+        "hidden": false,
+        "slug": "src-components-button-button",
+        "route": "/src-components-button-button",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "button",
+            "depth": 1,
+            "value": "Button"
+          },
+          {
+            "slug": "colors",
+            "depth": 2,
+            "value": "Colors"
+          },
+          {
+            "slug": "colors-value-",
+            "depth": 4,
+            "value": "Color's Value :"
+          },
+          {
+            "slug": "default",
+            "depth": 2,
+            "value": "Default"
+          },
+          {
+            "slug": "values-",
+            "depth": 4,
+            "value": "Values :"
+          },
+          {
+            "slug": "flat",
+            "depth": 2,
+            "value": "Flat"
+          },
+          {
+            "slug": "values--1",
+            "depth": 4,
+            "value": "Values :"
+          },
+          {
+            "slug": "gradient",
+            "depth": 2,
+            "value": "Gradient"
+          },
+          {
+            "slug": "values--2",
+            "depth": 4,
+            "value": "Values :"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "example/src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "src/components/Button/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "actualName": "Button",
+          "props": {
+            "color": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "enum",
+                    "value": [
+                      {
+                        "value": "'primary'",
+                        "computed": false
+                      },
+                      {
+                        "value": "'success'",
+                        "computed": false
+                      },
+                      {
+                        "value": "'warning'",
+                        "computed": false
+                      },
+                      {
+                        "value": "'danger'",
+                        "computed": false
+                      },
+                      {
+                        "value": "'dark'",
+                        "computed": false
+                      },
+                      {
+                        "value": "'light'",
+                        "computed": false
+                      }
+                    ]
+                  },
+                  {
+                    "name": "string"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "You Can Use `RGB color`, `HEX color` or Main colors of `Reactsax`",
+              "defaultValue": {
+                "value": "'primary'",
+                "computed": false
+              }
+            },
+            "styleType": {
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'flat'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'border'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'gradient'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'relief'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'transparent'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'shadow'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'floating'",
+                    "computed": false
+                  }
+                ]
+              },
+              "required": false,
+              "description": "Button Style"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": ".docz/src/pages/404.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "NotFound",
+          "methods": [],
+          "actualName": "NotFound"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+---
+name: Button
+---
+
+import { Playground, Props } from 'docz'
+import Button from '.'
+
+# Button
+
+The `Buttons` are a fundamental part of any project, with `Reactsax` you can add a great button with a single line of code.
+
+<br />
+
+## Colors
+
+Change the color of the Button component with the `color` property and the color value (like `#fff`, `rgba (100,10,5)` or the main colors of `Reactsax`), this will only affect the component and its value can be dynamic. You can use color attribute or use `Reactsax` colors directly.
+
+<br />
+
+#### Color's Value :
+
+- `primary`
+- `success`
+- `warning`
+- `danger`
+- `light`
+- `dark`
+- `RGB color` (like `rgb(255,255,25)`)
+- `HEX color` (like `#3B3B98`)
+
+<Playground>
+  <Button primary>Primary</Button>
+  <Button success>Success</Button>
+  <Button warning>Warning</Button>
+  <Button danger>Danger</Button>
+  <Button dark>Dark</Button>
+  <Button light>White</Button>
+  <Button color={'rgb(20, 255, 203)'}>RGB</Button>
+  <Button color={'#626cfc'}>HEX</Button>
+</Playground>
+
+If You Get Warning:
+`Received true for a non-boolean attribute`
+You can use `color` attribute :
+
+<Playground>
+  <center>
+    <Button color={'success'}>Success</Button>
+  </center>
+</Playground>
+
+<br />
+<br />
+
+## Default
+
+The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` to make its implementation simpler and speed up the work.
+
+<br />
+
+#### Values :
+
+- `active`
+- `disabled`
+
+<Playground>
+  <Button active>Active</Button>
+  <Button>Default</Button>
+  <Button disabled>Disabled</Button>
+</Playground>
+
+<br />
+<br />
+
+## Flat
+
+The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` to make its implementation simpler and speed up the work.
+
+<br />
+
+#### Values :
+
+- `flat`
+
+<Playground>
+  <Button flat active>
+    Active
+  </Button>
+  <Button flat>Default</Button>
+  <Button flat disabled>
+    Disabled
+  </Button>
+</Playground>
+
+<br />
+<br />
+
+## Gradient
+
+The `Buttons` have all the states as `active`, `focus`, `hover`, and `disable` to make its implementation simpler and speed up the work.
+
+<br />
+
+#### Values :
+
+- `gradient`
+
+<Playground>
+  <Button gradient color={'#5555ee'} active>
+    Active
+  </Button>
+  <Button gradient color={'#5555ee'}>
+    Default
+  </Button>
+  <Button gradient color={'#5555ee'} disabled>
+    Disabled
+  </Button>
+</Playground>
+
+<br />
+<br />
+
+<Props of={Button} />
